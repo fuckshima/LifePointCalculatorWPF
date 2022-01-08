@@ -1,16 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace LifePointCalculatorWPF.Views
 {
@@ -23,6 +12,7 @@ namespace LifePointCalculatorWPF.Views
         {
             InitializeComponent();
             FrontTextBox.Text = lifePoint.ToString();
+            Result = lifePoint;
         }
 
         /// <summary>
@@ -37,13 +27,51 @@ namespace LifePointCalculatorWPF.Views
         /// <param name="e"></param>
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            Result = (int.Parse(FrontTextBox.Text) - int.Parse(BackTextBox.Text));
+
         }
 
+        // 未入力状態か
+        bool isNeverEnterd = true;
+        /// <summary>
+        /// [数字]ボタン押下時処理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string input = (string)((Button)e.Source).Content;
-            BackTextBox.Text += input;
+            // 未入力状態の場合、テキストボックスをクリアする
+            if (isNeverEnterd)
+            {
+                isNeverEnterd = false;
+                BackTextBox.Text = string.Empty;
+            }
+
+            // テキストボックスへ入力値反映
+            if ((e.Source as Button)?.Content is string input)
+            {
+                BackTextBox.Text += input;
+            }
+        }
+
+        /// <summary>
+        /// [=]ボタン押下時処理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void EqualButton_Click(object sender, RoutedEventArgs e)
+        {
+            Result -= int.Parse(BackTextBox.Text);
+            Close();
+        }
+
+        /// <summary>
+        /// []ボタン押下時処理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

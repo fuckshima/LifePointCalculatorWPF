@@ -20,7 +20,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" Grid.Column="0">
-            <Button FontSize="30">↩</Button>
+            <Button FontSize="30" Click="BackButton_Click">↩</Button>
         </Grid>
         <Grid Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
@@ -42,7 +42,7 @@
                        TextAlignment="Left" 
                        Padding="13">
             </TextBlock>
-            <TextBlock x:Name="BackTextBox" 
+            <TextBlock x:Name="BackTextBox"                        
                        Grid.Column="2"
                        Text="0"
                        FontSize="50" 
@@ -80,17 +80,17 @@
             <Button Grid.Row="0" Grid.Column="1" FontSize="30" Click="Button_Click">8</Button>
             <Button Grid.Row="0" Grid.Column="2" FontSize="30" Click="Button_Click">9</Button>
 
-            <Button Grid.Row="1" Grid.Column="0" FontSize="30">4</Button>
-            <Button Grid.Row="1" Grid.Column="1" FontSize="30">5</Button>
-            <Button Grid.Row="1" Grid.Column="2" FontSize="30">6</Button>
+            <Button Grid.Row="1" Grid.Column="0" FontSize="30" Click="Button_Click">4</Button>
+            <Button Grid.Row="1" Grid.Column="1" FontSize="30" Click="Button_Click">5</Button>
+            <Button Grid.Row="1" Grid.Column="2" FontSize="30" Click="Button_Click">6</Button>
 
-            <Button Grid.Row="2" Grid.Column="0" FontSize="30">1</Button>
-            <Button Grid.Row="2" Grid.Column="1" FontSize="30">2</Button>
-            <Button Grid.Row="2" Grid.Column="2" FontSize="30">3</Button>
+            <Button Grid.Row="2" Grid.Column="0" FontSize="30" Click="Button_Click">1</Button>
+            <Button Grid.Row="2" Grid.Column="1" FontSize="30" Click="Button_Click">2</Button>
+            <Button Grid.Row="2" Grid.Column="2" FontSize="30" Click="Button_Click">3</Button>
 
-            <Button Grid.Row="3" Grid.Column="0" FontSize="30">0</Button>
-            <Button Grid.Row="3" Grid.Column="1" FontSize="30">00</Button>
-            <Button Grid.Row="3" Grid.Column="2" FontSize="30">000</Button>
+            <Button Grid.Row="3" Grid.Column="0" FontSize="30" Click="Button_Click">0</Button>
+            <Button Grid.Row="3" Grid.Column="1" FontSize="30" Click="Button_Click">00</Button>
+            <Button Grid.Row="3" Grid.Column="2" FontSize="30" Click="Button_Click">000</Button>
         </Grid>
 
         <Grid Grid.Row="1" Grid.Column="2">
@@ -106,7 +106,7 @@
             <Button Grid.Row="1" FontSize="20"></Button>
             <Button Grid.Row="2" FontSize="20"></Button>
             <Button Grid.Row="3" FontSize="20"></Button>
-            <Button Grid.Row="4" FontSize="30">=</Button>
+            <Button Grid.Row="4" FontSize="30" Click="EqualButton_Click">=</Button>
         </Grid>
     </Grid>
 </Window>

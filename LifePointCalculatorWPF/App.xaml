@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:LifePointCalculatorWPF"
              StartupUri="Views/MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary Source="/Twining;component/Themes/Generic.xaml" />
     </Application.Resources>
 </Application>
